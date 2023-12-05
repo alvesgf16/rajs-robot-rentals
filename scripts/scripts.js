@@ -1,4 +1,4 @@
-/****************** YOUR NAME: 
+/** **************** YOUR NAME:
 
 The instructions describe the missing logic that is needed; you will translate these into JavaScript in the places indicated.
 
@@ -6,13 +6,13 @@ You are encouraged to use the provided naming convention for ease of review.
 
 */
 
-/****************** create variables ******************/
+/** **************** create variables ***************** */
 /* create variables to hold the values for modelName and duration */
 
 let modelName = 'CPRG';
 let duration = 0;
 
-/****************** helper function ******************/
+/** **************** helper function ***************** */
 /* create a function called recalculate() which will
     - create a variable to represent the calculated-cost span element. That will look something like:
         // let costLabel = document.getElementById("calculated-cost");
@@ -37,9 +37,9 @@ function recalculate() {
   costLabel.innerHTML = updatedCost();
 }
 
-/****************** model button logic ******************/
+/** **************** model button logic ***************** */
 
-/* 
+/*
 - first, create a variable to represent the "Switch Model" pseudo-button (hint: can use getElementById)
 - second, create a function called changeModel() which checks the value of the model name variable. This function will:
     - create a variable to represent the model-text span element
@@ -80,7 +80,7 @@ function changeModel() {
 const modelButton = document.getElementById('model-button');
 modelButton.addEventListener('click', changeModel);
 
-/****************** duration button logic ******************/
+/** **************** duration button logic ***************** */
 /*  - first, create a variable to represent the "Change Duration" pseudo-button.
     - then, create a function called changeDuration() that will
         - create a variable to represent the duration-text span element
