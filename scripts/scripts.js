@@ -23,7 +23,7 @@ let duration = 0;
 */
 
 function recalculate() {
-  let costLabel = document.getElementById("calculated-cost");
+  const costLabel = document.getElementById("calculated-cost");
   costLabel.innerHTML = updatedCost();
 }
 
@@ -62,7 +62,7 @@ function changeModelName() {
 }
 
 function changeModelText() {
-  modelText = document.getElementById("model-text");
+  const modelText = document.getElementById("model-text");
   modelText.innerHTML = updatedModelText();
 }
 
@@ -75,7 +75,7 @@ function updatedModelText() {
   }
 }
 
-modelButton = document.getElementById("model-button");
+const modelButton = document.getElementById("model-button");
 modelButton.addEventListener("click", changeModel);
 
 /****************** duration button logic ******************/
@@ -90,11 +90,11 @@ modelButton.addEventListener("click", changeModel);
 */
 
 function changeDuration() {
-  durationText = document.getElementById("duration-text");
+  const durationText = document.getElementById("duration-text");
   duration = prompt("Select a duration: ");
   durationText.innerHTML = duration;
   recalculate();
 }
 
-durationButton = document.getElementById("duration-button");
+const durationButton = document.getElementById("duration-button");
 durationButton.addEventListener("click", changeDuration);
