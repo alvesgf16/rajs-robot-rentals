@@ -22,11 +22,6 @@ let duration = 0;
     - set the value of the calculated-cost element's innerHTML to this new value
 */
 
-function recalculate() {
-  const costLabel = document.getElementById('calculated-cost');
-  costLabel.innerHTML = updatedCost();
-}
-
 function updatedCost() {
   if (modelName === 'XYZ') {
     return parseFloat(duration * 100).toFixed(2);
@@ -34,6 +29,12 @@ function updatedCost() {
   if (modelName === 'CPRG') {
     return parseFloat(duration * 213).toFixed(2);
   }
+  return 0;
+}
+
+function recalculate() {
+  const costLabel = document.getElementById('calculated-cost');
+  costLabel.innerHTML = updatedCost();
 }
 
 /****************** model button logic ******************/
@@ -47,23 +48,12 @@ function updatedCost() {
     - then, recalculate() the total cost.
 - finally, uncomment the following line of JavaScript to have this function run automatically whenever the pseudo-button is clicked: */
 
-function changeModel() {
-  changeModelName();
-  changeModelText();
-  recalculate();
-}
-
 function changeModelName() {
   if (modelName === 'XYZ') {
     modelName = 'CPRG';
   } else if (modelName === 'CPRG') {
     modelName = 'XYZ';
   }
-}
-
-function changeModelText() {
-  const modelText = document.getElementById('model-text');
-  modelText.innerHTML = updatedModelText();
 }
 
 function updatedModelText() {
@@ -73,6 +63,18 @@ function updatedModelText() {
   if (modelName === 'CPRG') {
     return 'Model XYZ';
   }
+  return '';
+}
+
+function changeModelText() {
+  const modelText = document.getElementById('model-text');
+  modelText.innerHTML = updatedModelText();
+}
+
+function changeModel() {
+  changeModelName();
+  changeModelText();
+  recalculate();
 }
 
 const modelButton = document.getElementById('model-button');
